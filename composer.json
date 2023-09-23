@@ -1,0 +1,20 @@
+{
+    "name": "akimov/crud",
+    "description": "Simple Crud with routing",
+    "type": "project",
+    "license": "GNU",
+    "autoload": {
+        "psr-4": {
+            "Akimov\\Crud\\":"src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mykola AKimov",
+            "email": "wildniko88@gmail.com",
+            "homepage": "https://akv-dev.com",
+            "role": "web-developer"
+        }
+    ],
+    "minimum-stability": "stable"
+}
