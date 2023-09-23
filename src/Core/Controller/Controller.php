@@ -2,8 +2,8 @@
 
 namespace Akimov\Crud\Core;
 
-use Akimov\Crud\Request;
-use Akimov\Crud\Response;
+use Akimov\Crud\Core\Request;
+use Akimov\Crud\Core\Response;
 
 abstract class Controller
 {

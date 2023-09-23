@@ -1,6 +1,6 @@
 <?php
 
-namespace Akimov\Crud;
+namespace Akimov\Crud\Core;
 
 class Request
 {

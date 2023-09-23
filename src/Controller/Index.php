@@ -3,9 +3,8 @@
 namespace Akimov\Crud\Controller;
 
 use Akimov\Crud\Core\Controller;
-use Akimov\Crud\Database;
-use Akimov\Crud\Response;
-use Akimov\Crud\View;
+use Akimov\Crud\Core\Response;
+use Akimov\Crud\Core\View;
 
 class Index extends Controller
 {
@@ -17,7 +16,6 @@ class Index extends Controller
     public function index(): Response
     {
         $view = new View();
-        $pdo = Database::get();
 
         $users = [
             'name' => 'testname',

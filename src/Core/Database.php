@@ -1,6 +1,6 @@
 <?php
 
-namespace Akimov\Crud;
+namespace Akimov\Crud\Core;
 
 use PDO;
 
@@ -10,12 +10,11 @@ class Database
 
     private static function connect()
     {
-        $config = require_once dirname(__DIR__) . '/config/database.php';
         $dsn = sprintf(
             'mysql:host=%s;dbname=%s;port=%s',
-            $config['host'],
-            $config['dbname'],
-            $config['port']
+            DB_HOSTNAME,
+            DB_DATABASE,
+            DB_PORT
         );
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -23,7 +22,7 @@ class Database
         ];
 
         try {
-            self::$pdo = new PDO($dsn, $config['user'], $config['password'], $options);
+            self::$pdo = new PDO($dsn, DB_USERNAME, DB_PASSWORD, $options);
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }

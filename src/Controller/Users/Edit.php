@@ -1,10 +1,10 @@
 <?php
 
-namespace Akimov\Crud\Controller;
+namespace Akimov\Crud\Controller\Users;
 
-use Akimov\Crud\Core\Controller;
-use Akimov\Crud\Response;
-use Akimov\Crud\View;
+use Akimov\Crud\Core\Controller\Controller;
+use Akimov\Crud\Core\Response;
+use Akimov\Crud\Core\View;
 
 class Edit extends Controller
 {
@@ -22,7 +22,7 @@ class Edit extends Controller
         }
 
         $user = [];
-        $this->response->setBody($view->render('edit.phtml', [
+        $this->response->setBody($view->render('user/form.phtml', [
             'user' => $user
         ]));
 

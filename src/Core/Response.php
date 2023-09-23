@@ -1,6 +1,6 @@
 <?php
 
-namespace Akimov\Crud;
+namespace Akimov\Crud\Core;
 
 class Response
 {
@@ -57,7 +57,7 @@ class Response
     public function render(): void
     {
         if(!empty($this->url)) {
-            header('Location: http://route-crud' . $this->url);
+            header('Location: ' . HTTP_SERVER . $this->url);
         }
         
         echo $this->body;
