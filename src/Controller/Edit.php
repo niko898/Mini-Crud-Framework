@@ -2,26 +2,30 @@
 
 namespace Akimov\Crud\Controller;
 
-use Akimov\Crud\Request;
+use Akimov\Crud\Core\Controller;
 use Akimov\Crud\Response;
 use Akimov\Crud\View;
 
-class Edit 
+class Edit extends Controller
 {
-    public function index(Request $request, Response $response)
+    /**
+     * index
+     *
+     * @return Response
+     */
+    public function index(): Response
     {
         $view = new View();
-        $params = $request->getParams();
+        $params = $this->request->getParams();
         if(!empty($params['user_id'])){
 
         }
 
         $user = [];
-
-        $response->setBody($view->render('edit.phtml', [
+        $this->response->setBody($view->render('edit.phtml', [
             'user' => $user
         ]));
 
-        return $response;
+        return $this->response;
     }
 }

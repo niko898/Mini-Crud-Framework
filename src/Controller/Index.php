@@ -2,14 +2,19 @@
 
 namespace Akimov\Crud\Controller;
 
+use Akimov\Crud\Core\Controller;
 use Akimov\Crud\Database;
-use Akimov\Crud\Request;
 use Akimov\Crud\Response;
 use Akimov\Crud\View;
 
-class Index 
+class Index extends Controller
 {
-    public function index(Request $request, Response $response): Response
+    /**
+     * index
+     *
+     * @return Response
+     */
+    public function index(): Response
     {
         $view = new View();
         $pdo = Database::get();
@@ -19,9 +24,9 @@ class Index
             'lastname' => 'testlastname'
         ];
 
-        $response->setBody($view->render('index.phtml', [
+        $this->response->setBody($view->render('index.phtml', [
             'users' => $users
         ]));
-        return $response;
+        return $this->response;
     }
 }

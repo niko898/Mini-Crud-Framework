@@ -78,14 +78,14 @@ class Router
         $response = new Response();
 
         if(!$controller){
-            $controller = function (Request $request,Response $response) {
+            $controller = function (Request $request, Response $response) {
                 $response->setBody('404 Not found!');
                 return $response;
             };
         }
 
         if(is_string($controller) && class_exists($controller)) {
-            $controller = new $controller();
+            $controller = new $controller($request, $response);
         }
 
         call_user_func_array(array($controller, $objMethod), [$request, $response]);
