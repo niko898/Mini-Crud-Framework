@@ -7,7 +7,7 @@ use Akimov\Crud\Core\Model\Migration\MigrationInterface;
 class User //implements MigrationInterface
 {
     private array $fields;
-    private array $tableName;
+    private string $tableName;
 
     public function __construct()
     {
@@ -28,9 +28,9 @@ class User //implements MigrationInterface
     /**
      * get table name
      *
-     * @return array
+     * @return string
      */
-    public function getTableName(): array
+    public function getTableName(): string
     {
         return $this->tableName;
     }

@@ -17,9 +17,10 @@ var_dump($db->get());
 
 $model_path = DIR_APPLICATION . '/src/Model/' . $model . '/Migration/' . $model . '.php';
 if(file_exists($model_path)){
-    /*require_once $model_path;
+    $model = 'Akimov\\Crud\\Model\\User\\Migration\\' . $model;
+    require_once $model_path;
     $element = new $model();
-    var_dump($element->getTableName);*/
-    $obj = new \ReflectionObject($model_path); 
+    var_dump($element->getTableName());
+    
     
 }
