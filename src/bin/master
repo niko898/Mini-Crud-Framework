@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+require './config/env.php';
+require DIR_APPLICATION . '/vendor/autoload.php';
+
+if(isset($argv[1])){
+
+    if($argv[1] == '--help'){
+        echo 'make:migrate <Model name>';
+        exit;
+    }
+
+    if($argv[1] == 'make:migrate' && isset($argv[2])){
+        $model = $argv[2];
+        require_once(DIR_APPLICATION . '/src/bin/commands/migrate.php');
+    }else{
+        echo 'Error command';
+    }
+}

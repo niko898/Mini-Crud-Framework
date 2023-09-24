@@ -1,0 +1,6 @@
+<?php
+
+use Akimov\Crud\Core\Model\Model;
+
+$db = new Model();
+var_dump($db->get());

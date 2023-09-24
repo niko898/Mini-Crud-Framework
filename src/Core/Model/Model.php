@@ -1,6 +1,6 @@
 <?php
 
-namespace Akimov\Crud\Core;
+namespace Akimov\Crud\Core\Model;
 
 use PDO;
 
@@ -33,5 +33,13 @@ class Model
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
+    }
+
+    public static function get(): PDO
+    {
+        if (empty(static::$pdo)) {
+            self::connect();
+        }
+        return static::$pdo;
     }
 }
