@@ -6,7 +6,7 @@ $pdo = $db->get();
 
 $model_path = DIR_APPLICATION . '/src/Model/' . $model . '/Migration/' . $model . '.php';
 if(file_exists($model_path)){
-    $model = 'Akimov\\Crud\\Model\\User\\Migration\\' . $model;
+    $model = 'Akimov\\Crud\\Model\\'. ucfirst($model) .'\\Migration\\' . $model;
     require_once $model_path;
     $element = new $model();
 
