@@ -1,13 +1,23 @@
 #!/usr/bin/env php
 <?php
-
-require './config/env.php';
+require '../config/env.php';
 require DIR_APPLICATION . '/vendor/autoload.php';
+
+$helpers = [
+    'make:migrate <Model name>'
+];
+
+function help($helpers)
+{
+    foreach($helpers as $helper){
+        echo $helper;
+    }
+}
 
 if(isset($argv[1])){
 
     if($argv[1] == '--help'){
-        echo 'make:migrate <Model name>';
+        help($helpers);
         exit;
     }
 
@@ -17,4 +27,7 @@ if(isset($argv[1])){
     }else{
         echo 'Error command';
     }
+}else{
+    help($helpers);
+    exit;
 }
