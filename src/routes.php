@@ -7,8 +7,7 @@ use Akimov\Crud\Core\Router;
 use Akimov\Crud\Core\Model\Model;
 
 $db = new Model();
-var_dump($db->get());
-exit;
+
 $router = new Router;
 
 $router->get('/', Index::class);

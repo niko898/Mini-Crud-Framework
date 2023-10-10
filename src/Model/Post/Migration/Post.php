@@ -35,9 +35,19 @@ class Post extends Migration implements MigrationInterface
     {
         $this->fields = [
             'post_id' => [
-                'format' => 'INT AUTO_INCREMENT PRIMARY KEY',
+                'format' => 'INT (10) AUTO_INCREMENT PRIMARY KEY',
                 'required' => false,
                 'key' => true
+            ],
+            'user_id' => [
+                'format' => 'INT (10) NOT NULL',
+                'required' => false,
+                'key' => true,
+                'references' => [
+                    'table_name' => 'users',
+                    'field_name' => 'user_id',
+                    'rules' => 'ON DELETE CASCADE'
+                ]
             ],
             'title' => [
                 'format' => 'VARCHAR(255)',

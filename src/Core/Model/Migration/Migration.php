@@ -2,7 +2,7 @@
 
 namespace Akimov\Crud\Core\Model\Migration;
 
-class Migration 
+abstract class Migration 
 {
 
     protected array $fields;

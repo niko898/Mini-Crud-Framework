@@ -1,6 +1,6 @@
 <?php
 
-namespace Akimov\Crud\Core;
+namespace Akimov\Crud\Core\Controller;
 
 use Akimov\Crud\Core\Request;
 use Akimov\Crud\Core\Response;

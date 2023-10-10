@@ -2,9 +2,11 @@
 
 namespace Akimov\Crud\Controller;
 
-use Akimov\Crud\Core\Controller;
+use Akimov\Crud\Core\Controller\Controller;
+use Akimov\Crud\Core\Model\Collection\Collection;
 use Akimov\Crud\Core\Response;
 use Akimov\Crud\Core\View;
+use Akimov\Crud\Model\User\User;
 
 class Index extends Controller
 {
@@ -16,7 +18,8 @@ class Index extends Controller
     public function index(): Response
     {
         $view = new View();
-
+        
+        
         $users = [
             'name' => 'testname',
             'lastname' => 'testlastname'
@@ -25,6 +28,7 @@ class Index extends Controller
         $this->response->setBody($view->render('index.phtml', [
             'users' => $users
         ]));
+        
         return $this->response;
     }
 }

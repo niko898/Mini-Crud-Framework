@@ -30,8 +30,13 @@ if(file_exists($model_path)){
         
 		$query = $pdo->query($sql);
 
+        $references = '';
+        if(isset($field_params['references'])){
+            $references = ", ADD FOREIGN KEY (`$field_name`) REFERENCES " . DB_PREFIX . $field_params['references']['table_name'] . " (" . $field_params['references']['field_name'] . ") " . $field_params['references']['rules'];
+        }
+
 		if (!$query->rowCount()) {
-			$sql = "ALTER TABLE `" . DB_PREFIX . "$tableName` ADD COLUMN `$field_name` " . $field_params['format'] . " ;";
+			$sql = "ALTER TABLE `" . DB_PREFIX . "$tableName` ADD COLUMN `$field_name` " . $field_params['format'] . " " . $references . " ;";
 			$pdo->query($sql);
 		}
     }

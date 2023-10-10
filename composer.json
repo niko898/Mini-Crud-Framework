@@ -10,11 +10,15 @@
     },
     "authors": [
         {
-            "name": "Mykola AKimov",
+            "name": "Mykola Akimov",
             "email": "wildniko88@gmail.com",
             "homepage": "https://akv-dev.com",
             "role": "web-developer"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require": {
+        "webmozart/assert": "^1.11",
+        "ext-pdo": "*"
+    }
 }
